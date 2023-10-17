@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularTraining';
+  date:any = new Date()
+  jsonval:any = [{name:"rojo",age:21},{name:"kite",age:51}];
+  items: string[] = ['Apple', 'Banana', 'Cherry', 'Date', 'apple', 'Grape',"Jakusa"];
+  serchData: any;
+  val:string = 'Hello!'
 }
