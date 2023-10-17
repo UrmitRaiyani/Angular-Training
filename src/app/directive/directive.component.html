@@ -1,0 +1,16 @@
+<p>directive works!</p>
+<button (click)="get()">click</button>
+
+<div *ngIf="isActive">
+    <h3>Hey!</h3>
+</div>
+
+<p [ngClass]="isActive? 'red':'green'">class directive</p>
+
+<p [style.font-size]="isActive?'x-large' :'smaller'">style binding</p>
+
+<div [ngStyle]="currentStyles">   
+    style binding with function
+  </div>
+
+  <h3 appInbuilt>custome directive</h3>
