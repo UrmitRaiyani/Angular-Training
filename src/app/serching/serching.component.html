@@ -1,0 +1,8 @@
+<p>serching works!</p>
+
+<input type="text" [(ngModel)]="serchData" placeholder="serching.."> 
+
+
+<ul>
+  <li *ngFor="let item of items | filterPipe:serchData">{{item.name}} -- {{item.age}} </li>
+</ul>
