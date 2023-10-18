@@ -11,10 +11,11 @@ export class DirectiveComponent {
   canSave:boolean=true;
   isUnchanged:boolean=true;
   isSpecial:boolean=true;
-  
+
   currentStyles:any = '';
   get(){
     this.isActive=!this.isActive
+    this.currentstyle();
   }
 
   currentstyle(){
