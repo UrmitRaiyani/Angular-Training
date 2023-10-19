@@ -31,7 +31,7 @@ export class ArrayMethodsComponent implements OnInit{
     public indexOfData:any[] = dataFilter;
     public indexOfResult:any;
     public joinData:any[] = arrayData;
-    public joinResult!:any[];
+    public joinResult:string='';
     public keyData:any[] = flatData;
     public keyResult:any;
     public lastIndexOfData:any[] = arrayData;
@@ -59,7 +59,7 @@ export class ArrayMethodsComponent implements OnInit{
     public spliceData:any[] = spliceData;
     public spliceResult:any[]=[];
     public toStringData:any[] = arrayNum;
-    public toStringResult:any[]=[];
+    public toStringResult:string='';
     public unshiftData:any[] = dataFilter;
     public unshiftResult:any[]=[];
     public FillData:any[] = fillData;
@@ -135,8 +135,8 @@ export class ArrayMethodsComponent implements OnInit{
       this.indexOfResult = this.indexOfData.indexOf({id:1,name:'abc1',age:12});
     }
     onjoin():void{
-      this.joinData.join('+');
-      this.joinResult = this.joinData
+      
+      this.joinResult = this.joinData.join('+');
     }
     onKey():void{
       let ite = this.keyData.keys()
@@ -186,8 +186,7 @@ export class ArrayMethodsComponent implements OnInit{
       this.spliceResult = this.spliceData.splice(1,2,{id:8,name:'Splice'});
     }
     ontoString():void{
-      this.toStringData.toString();
-      this.toStringResult = this.toStringData
+      this.toStringResult = this.toStringData.toString();
     }
     onUnshift():void{ 
       this.unshiftData.unshift({id:0,name:'Unshift'},{id:10,name:'Unshift-02'});
