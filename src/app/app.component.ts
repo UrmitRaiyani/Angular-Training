@@ -13,4 +13,5 @@ export class AppComponent {
   items: string[] = ['Apple', 'Banana', 'Cherry', 'Date', 'apple', 'Grape',"Jakusa"];
   serchData: any;
   val:string = 'Hello!'
+  isActive:boolean = false
 }
