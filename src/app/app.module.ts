@@ -6,7 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { SerchingComponent } from './serching/serching.component';
 import { FilterPipePipe } from './serching/filter-pipe.pipe';
 import { DirectiveComponent } from './directive/directive.component';
-import { InbuiltDirective } from './inbuilt.directive'
+import { InbuiltDirective } from './inbuilt.directive';
+import { ArrayMethodsComponent } from './array-methods/array-methods.component'
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { InbuiltDirective } from './inbuilt.directive'
     FilterPipePipe,
     DirectiveComponent,
     InbuiltDirective,
+    ArrayMethodsComponent,
   ],
   imports: [
     BrowserModule,
