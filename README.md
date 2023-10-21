@@ -42,4 +42,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### Day 3 (19-10-2023)
 - Creating Templete Driven Form
 - Emplement Routing
-- lerning ngTemplet & ngcontainer 
+- lerning ngTemplet & ngcontainer
+
+### Day 4 (20-10-2023)
+- Creating Nested Templete Driven Form
