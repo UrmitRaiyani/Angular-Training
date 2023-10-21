@@ -10,6 +10,7 @@ import { InbuiltDirective } from './inbuilt.directive';
 import { ArrayMethodsComponent } from './array-methods/array-methods.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TempletDrivenFormComponent } from './templet-driven-form/templet-driven-form.component';
+import { NestedTempletDrivenFormComponent } from './nested-templet-driven-form/nested-templet-driven-form.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { TempletDrivenFormComponent } from './templet-driven-form/templet-driven
     InbuiltDirective,
     ArrayMethodsComponent,
     TempletDrivenFormComponent,
+    NestedTempletDrivenFormComponent,
   ],
   imports: [
     BrowserModule,

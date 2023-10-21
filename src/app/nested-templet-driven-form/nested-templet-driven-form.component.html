@@ -1,0 +1,77 @@
+<p>nested-templet-driven-form works!</p>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+<form #form="ngForm" (ngSubmit)="getData(form.value)">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">ID</label>
+        <input type="number" name="Id" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" ngModel #ID="ngModel">
+        <div *ngIf="ID.touched && ID.invalid" class="alert alert-danger"> 
+            Id is required.
+        </div>
+     </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Enter Name</label>
+      <input type="text" name="name" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" ngModel #name="ngModel">
+      <div *ngIf="name.touched && name.invalid" class="alert alert-danger"> 
+          Name is required.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Age</label>
+      <input type="number" name="Age" class="form-control" id="exampleInputPassword1" required ngModel #age="ngModel">
+      <div *ngIf="age.touched && age.invalid" class="alert alert-danger"> 
+        Age is required.
+      </div>
+    </div>
+    <div class="mb-3" ngModelGroup="address" #Address="ngModelGroup">
+
+        <label for="houseNo" class="form-label">HouseNo</label>
+        <input type="text" name="houseNo" class="form-control" id="exampleInputPassword1" required ngModel #houseNo="ngModel">
+        <div *ngIf="houseNo.touched && houseNo.invalid" class="alert alert-danger"> 
+            HouseNo field is required.
+        </div>
+
+        <label for="address" class="form-label">Enter Address</label>
+        <input type="text" name="addressLine" class="form-control" id="exampleInputPassword1" required ngModel #addressLine="ngModel">
+        <div *ngIf="addressLine.touched && addressLine.invalid" class="alert alert-danger"> 
+            AddressLine field is required.
+        </div>
+        
+        <label for="country">country</label>
+        <select name="country" ngModel required #selector="ngModel" [(ngModel)]="selectedCountry" (change)="onCountryChange()">
+            <option value="">--select--</option>
+            <option *ngFor="let item of country" [value]="item">{{item}}</option>
+        </select>
+        <div *ngIf="selector.touched && selector.invalid" class="alert alert-danger"> 
+          select field is required.
+        </div>
+
+        <label for="state" style="margin-left: 15px;">State</label>
+        
+        <select name="State" ngModel required #state="ngModel" [(ngModel)]="selectedState" [disabled]="!selectedCountry"  (change)="onStatechange()">
+            <option value="">--select--</option>
+            <option *ngFor="let item of State" [value]="item">{{item}}</option>
+        </select>
+        <div *ngIf="state.touched && state.invalid" class="alert alert-danger"> 
+            State field is required.
+        </div>
+
+        <label for="city" style="margin-left: 15px;">City</label>
+        <select name="city" ngModel required #city="ngModel" [(ngModel)]="selectedCity" [disabled]="!selectedState">
+            <option value="">--select--</option>
+            <option *ngFor="let item of cityA" [value]="item">{{item}}</option>
+        </select>
+        <div *ngIf="city.touched && city.invalid" class="alert alert-danger"> 
+            city field is required.
+        </div>
+        <br><br>
+    </div>
+    
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+    <button type="submit" class="btn btn-primary" (click)="form.resetForm({})">Reset</button>
+  </form>
+
+  <ul *ngIf="isValue">
+    <li>{{formvalue.Id}} - {{formvalue.name}} - {{formvalue.Age}} - {{formvalue.address.houseNo}} - {{formvalue.address.addressLine}} -{{formvalue.address.city}} - {{formvalue.address.State}}  -- {{formvalue.address.country}} </li>
+  </ul>
+<script src="https://cdn.sdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

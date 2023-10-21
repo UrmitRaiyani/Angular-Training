@@ -9,10 +9,7 @@ export class TempletDrivenFormComponent {
 
   formvalue:any = '';
   country:string[]=['India','United State','Uk','Austrelia','Saudi Arabia']
-  data:any={
-    email:'',
-    password:''
-  }
+  
   isValue:boolean = false;
   getData(val:any){
     console.log(val);
