@@ -12,21 +12,26 @@
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Password</label>
       <input type="password" name="password" class="form-control" id="exampleInputPassword1" required ngModel #password="ngModel">
-      <div *ngIf="password.touched && email.invalid" class="alert alert-danger"> 
+      <div *ngIf="password.touched && password.invalid" class="alert alert-danger"> 
         Password is required.
-    </div>
+      </div>
     </div>
     <div class="mb-3" ngModelGroup="address" #Address="ngModelGroup">
         <label for="country">country</label>
-        <select name="country" ngModel>
+        <select name="country" ngModel required #selector="ngModel">
             <option value="">--select--</option>
             <option *ngFor="let item of country" [value]="item">{{item}}</option>
         </select>
+        <div *ngIf="selector.touched && selector.invalid" class="alert alert-danger"> 
+          select field is required.
+        </div>
         <br><br>
-        <input type="radio" name="address" ngModel value="Home">Home
-        <input type="radio" name="address" ngModel value="office">office
-        <input type="radio" name="address" ngModel value="other">other 
-
+        <input type="radio" name="address" required ngModel #radio="ngModel" value="Home">Home
+        <input type="radio" name="address" required ngModel #radio="ngModel" value="office">office
+        <input type="radio" name="address" required ngModel #radio="ngModel" value="other">other 
+        <div *ngIf="radio.touched && radio.invalid" class="alert alert-danger"> 
+         this field is required.
+        </div>
     </div>
     
     <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
